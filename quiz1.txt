@@ -1,2 +1,7 @@
 #Graded by Ngoc (Ann) Nguyen
 #ngungo16
+import lab2.py
+n = lab2.n
+
+for i in range(1,n+1)
+ print "Hello World"
