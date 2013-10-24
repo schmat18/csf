@@ -19,20 +19,24 @@ Problem 1:
 
 Problem 2:
 
-...
+GC-content: 0.43029262963
 
 Problem 3:
 
-...
+The commenting out of the seq and linenum variables makes it so that the read in
+code has errors and cannot read. If gc_count was commented out then the code 
+gc_count = gc_count +1 would not work because of the use of the variable before
+it has a value.
 
 Problem 4:
 
-...
+at_content: 0.568993851852
 
 Collaboration:
 
-...
+Worked by self
 
 Reflection:
 
-...
+Changing the original code to run one loop instead of more is essential to saving
+time when running the bigger data sets.
