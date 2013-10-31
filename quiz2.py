@@ -8,7 +8,8 @@
 
 from lab2 import n
 
-string answer=""
+#I should not try to type cast to string when instantiating answer
+answer=""
 
 if(n>50):
   answer ="greater than 50"
@@ -21,3 +22,5 @@ elif(n==50):
   
 else:
   answer= "Error"
+#forgot to add the print at the end
+print answer
