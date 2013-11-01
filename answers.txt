@@ -32,6 +32,37 @@ Problem 4:
 
 at_content: 0.568993851852
 
+Problem 5:
+
+(No answers in this file.)
+
+Problem 6:
+
+Total count and seqCount are equal while sumCount is not. This this is due to 
+the sum value being taken from the relevent data to the experiment and the other
+two being taken from the sample as a whole. The sum value would be more relevent 
+then as a denominator for the gc_content variable.
+
+Problem 7:
+
+# divide the gc_count by the total_count
+gc_content = float(gc_count) / total_count
+
+
+at_content = float(at_count) / total_count
+
+
+Problem 8:
+
+if(gc_content >0.6):
+    gcClassification = "High GC Classification"
+elif(gc_content> 0.4):
+    gcClassification = "Moderate GC Classification"
+else:
+    gcClassification = "Low GC Classification"
+
+
+
 Collaboration:
 
 Worked by self

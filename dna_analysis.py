@@ -20,7 +20,7 @@ import sys
 #---------------------------------------------------------------------------------
 # cmd cd to this file then type "python dna_analysis.py data\\sample_1.fasq"
 #---------------------------------------------------------------------------------
-
+print "Starting read:"
 
 ###########################################################################
 ### Read the nucleotides into a variable named seq
@@ -109,7 +109,7 @@ sumCount= (gCount + cCount + tCount + aCount)
 
 atcgRatio= float(at_content/gc_content)
 
-seqLength=total_count
+seqLength=len(seq)
 if(gc_content >0.6):
     gcClassification = "High GC Classification"
 elif(gc_content> 0.4):
