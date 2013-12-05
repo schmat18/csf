@@ -1,5 +1,4 @@
 
-
 output = [0,1]
 n= int(raw_input("Input the value of n: "))
 series= str(raw_input("Input the value of series [SUM, FIBONACCI]: "))
@@ -21,4 +20,4 @@ elif (series == "sum"):
     print ("The value of the "+str(n)+" is "+str(temp))
     
 else:
-    print "Invalid String!"
+    print "Invalid String Fix Now Or Fail Noob Programmer!"
