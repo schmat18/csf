@@ -1,73 +1,71 @@
 Name: Matthew Schult
-Evergreen Login: schmat18
+Evergreen Login: Schmat18
 Computer Science Foundations
 Programming as a Way of Life
-Fall 2013
-Homework 3 
+Homework 8
 
 For each problem that requires a written answer, write (or copy-and-paste)
 your answers in this file.  When you are done, you should have replaced all
 the ellipses (the three dots) with your answers.
 
-At the end, you will turn in this file along with your modified
-dna_analysis.py program.
 
-
-Problem 1:
+Problem 1-3:
 
 (No answers in this file.)
-
-Problem 2:
-
-GC-content: 0.43029262963
-
-Problem 3:
-
-The commenting out of the seq and linenum variables makes it so that the read in
-code has errors and cannot read. If gc_count was commented out then the code 
-gc_count = gc_count +1 would not work because of the use of the variable before
-it has a value.
 
 Problem 4:
 
-at_content: 0.568993851852
+Unchanged recommendations: 
+Changed recommendations: 
 
 Problem 5:
 
-(No answers in this file.)
+Leave the correct one:
+Yes or No 
+
+Reason:
+...
 
 Problem 6:
 
-Total count and seqCount are equal while sumCount is not. This this is due to 
-the sum value being taken from the relevent data to the experiment and the other
-two being taken from the sample as a whole. The sum value would be more relevent 
-then as a denominator for the gc_content variable.
+Graph:
+...
+
+Reason:
+...
 
 Problem 7:
 
-# divide the gc_count by the total_count
-gc_content = float(gc_count) / total_count
-
-
-at_content = float(at_count) / total_count
-
+...
 
 Problem 8:
 
-if(gc_content >0.6):
-    gcClassification = "High GC Classification"
-elif(gc_content> 0.4):
-    gcClassification = "Moderate GC Classification"
-else:
-    gcClassification = "Low GC Classification"
+(No answers in this file.)
+
+Problem 9:
+
+...
+
+Problem 10:
+
+...
+
+Problem 11:
+
+...
+
+Problem 12:
+
+...
 
 
 
 Collaboration:
 
-Worked by self
+...
 
 Reflection:
 
-Changing the original code to run one loop instead of more is essential to saving
-time when running the bigger data sets.
+...
+
+(Don't forget to complete the time survey!)
