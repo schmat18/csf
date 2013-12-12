@@ -60,10 +60,12 @@ def most_recent_poll_row(poll_rows, pollster, state):
     specified pollster and state. If no such row exists, returns None.
     """
     output={None}
+    date = "Dec 31 1900"
     for row in poll_rows:
-        if(row['Pollster'] == pollster):
-            if(row['State'] == state):
+        if((row['Pollster'] ==pollster)&(row['State']== state)):
+            if(not earlier_date(row['Date'], date)):
                 output=row
+                date = row['Date']
     
     if (output == {None}):
         return None
@@ -90,16 +92,21 @@ def pollster_predictions(poll_rows):
     """
     Given a list of poll data rows, returns pollster predictions.
     """
-    output= {}
+    temp={}
+    withDates=set()
+    for row in poll_rows:
+        #print row
     
-    for row in poll_rows : 
+        if not row['Pollster'] in temp:
+            temp[row['Pollster']]={}
         
-        if row['Pollster'] in output:
-            output[row['Pollster']]={}
-            
-        output[row['Pollster']][row['State']]=row_to_edge(row)
+        if (row['Pollster'] in withDates) & (row['States'] in withDates):
+            if((row['Pollster'] ==newest['Pollster'])&(row['State']== newest['State'])):
+                if(earlier_date(row['Date'],  )
+                    temp[row['Pollster']][row['State']]=row_to_edge(row)
+                    withDates.add(row)
         
-    return output
+    return temp
                 
                 
     

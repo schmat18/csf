@@ -57,12 +57,12 @@ poll_rows1 = [{"ID":1, "State":"WA", "Pollster":"A", "Date":"Jan 07 2010"},
 
 
 def test_most_recent_poll_row():
+    
     assert most_recent_poll_row(poll_rows1, "A", "OR") == {"ID":4, "State":"OR", "Pollster":"A", "Date":"Feb 10 2010"}
     assert most_recent_poll_row(poll_rows1, "A", "WA") == {"ID":3, "State":"WA", "Pollster":"A", "Date":"Jan 08 2010"}
     assert most_recent_poll_row(poll_rows1, "B", "WA") == {"ID":6, "State":"WA", "Pollster":"B", "Date":"Mar 22 2010"}
     assert most_recent_poll_row(poll_rows1, "B", "OR") == None
     assert most_recent_poll_row(poll_rows1, "DoesNotExist", "DoesNotExist") == None
-
 
 def test_unique_column_values():
     assert unique_column_values(poll_rows1, "ID") == { 1, 2, 3, 4, 5, 6 }
@@ -72,6 +72,7 @@ def test_unique_column_values():
 
 
 def test_pollster_predictions():
+    
     rows1 = [{'State': 'WA', 
                 'Dem': '1.0', 
                 'Rep': '0.1', 
@@ -89,12 +90,17 @@ def test_pollster_predictions():
       {'State': 'CA', 'Dem': '2.1', 'Rep': '3.2', 'Date': 'Nov 04 2008', 'Pollster': 'PPP'},
       {'State': 'WA', 'Dem': '9.1', 'Rep': '7.1', 'Date': 'Nov 05 2008', 'Pollster': 'IPSOS'},
       {'State': 'CA', 'Dem': '1.0', 'Rep': '10.3', 'Date': 'Nov 04 2008', 'Pollster': 'IPSOS'}]
+      
     assert pollster_predictions(rows3) == {'PPP': {'WA': 0.9, 'CA': -1.1}, 
                                              'IPSOS': {'WA': 2.0, 'CA': -9.3}}
                                              
     rows4 = [
       {'State': 'WA', 'Dem': '1.0', 'Rep': '0.1', 'Date': 'Nov 05 2008', 'Pollster': 'PPP'},
       {'State': 'WA', 'Dem': '1.0', 'Rep': '10.3', 'Date': 'Nov 04 2008', 'Pollster': 'PPP'}]
+    print pollster_predictions(rows1)
+    print pollster_predictions(rows2)
+    print pollster_predictions(rows3)
+    print pollster_predictions(rows4)
     assert pollster_predictions(rows4) == {'PPP': {'WA': 0.9}}
 
     rows5 = [
@@ -103,7 +109,7 @@ def test_pollster_predictions():
       {'State': 'OR', 'Dem': '9.1', 'Rep': '7.1', 'Date': 'Nov 05 2008', 'Pollster': 'IPSOS'}]
 
     assert pollster_predictions(rows5) == {'PPP': {'CA': -1.1, 'WA': 0.9}, 'IPSOS': {'OR': 2.0}}
-
+    
 
 def test_average_error():
     state_edges_pred_1 = {'WA': 1.0, 'CA': -2.3, 'ID': -20.1}
@@ -224,7 +230,7 @@ if __name__ == "__main__":
     test_earlier_date()
     test_most_recent_poll_row()
     test_unique_column_values()
-    #-test_pollster_predictions()
+    #test_pollster_predictions()
     #test_average_error()
     #test_pollster_errors()
     #test_pivot_nested_dict()
